@@ -1,0 +1,42 @@
+/* ==========================================================================
+   Layouts
+   ========================================================================== */
+body.homepage {
+    padding: 0 20px;
+}
+
+.sec--head,
+.sec--main,
+.sec--foot {
+    position: relative;
+    z-index: 1;
+}
+
+.sec--backgound {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: $color_grey;
+    .backgound__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+    }
+}
+
+.sec--head {
+    height: 80px;
+    background: $color_white;
+}
+
+.sec--foot {
+    padding: 20px;
+    color: $color_white;
+    background: $color_default;
+}

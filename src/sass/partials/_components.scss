@@ -1,0 +1,21 @@
+/* ==========================================================================
+   Components
+   ========================================================================== */
+
+.main-header {
+    margin: 0;
+    line-height: 80px;
+    font-size: 25px;
+    text-align: center;
+}
+
+.menu-toggler {
+    position: absolute;
+    top: 27px;
+    left: 20px;
+    width: 26px;
+    height: 26px;
+    text-indent: -1000em;
+    border-radius: 50%;
+    background: $color_red;
+}

@@ -1,0 +1,52 @@
+/* ==========================================================================
+   Helpers
+   ========================================================================== */
+
+/* Layout oriented helpers
+   ========================================================================== */
+%helper--inner {
+    position: relative;
+    width: $size_inner;
+    margin: 0 auto;
+}
+
+/* Clearfixes
+   ========================================================================== */
+%helper--clear {
+    content: ".";
+    display: block;
+    height: 0;
+    margin: 0!important;
+    overflow: hidden;
+    visibility: hidden;
+    clear: both;
+    line-height: 0;
+}
+%helper--clear:after {
+    content: ".";
+    display: block;
+    clear: both;
+    margin: 0!important;
+}
+%helper--clearfix {
+    &:before,
+    &:after {
+        content: "\0020";
+        display: block;
+        height: 0;
+        visibility: hidden;
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+.monofont {
+    display: block;
+    font-family: 'monotype';
+}
+
+.start-link {
+    color: $color_red;
+    text-decoration: underline;
+}
