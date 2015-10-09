@@ -492,8 +492,11 @@ a {
 /* ==========================================================================
    Layouts
    ========================================================================== */
-body.homepage {
-  padding: 0 20px; }
+body {
+  position: relative;
+  padding-bottom: 70px; }
+  body.homepage {
+    padding: 0 20px; }
 
 .sec--head,
 .sec--main,
@@ -522,6 +525,10 @@ body.homepage {
   background: #ffffff; }
 
 .sec--foot {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   padding: 20px;
   color: #ffffff;
   background: #404040; }

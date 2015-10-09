@@ -1,8 +1,12 @@
 /* ==========================================================================
    Layouts
    ========================================================================== */
-body.homepage {
-    padding: 0 20px;
+body {
+    position: relative;
+    padding-bottom: 70px;
+    &.homepage {
+        padding: 0 20px;
+    }
 }
 
 .sec--head,
@@ -36,6 +40,10 @@ body.homepage {
 }
 
 .sec--foot {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 20px;
     color: $color_white;
     background: $color_default;
