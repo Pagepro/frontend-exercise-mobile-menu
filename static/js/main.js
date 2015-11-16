@@ -13,18 +13,22 @@
         toggleMenu: function () {
             $('.js-menu-toggler').on('click', function (e) {
                 e.preventDefault();
-                $('.sec--nav').toggleClass('active')
-                $('body').toggleClass('blocked');
+                $('body').toggleClass('menu-opened');
+                if ($('body').is('.menu-opened')) {
+                    $('.js-with-submenu').removeClass('active');
+                    $('.sec--nav').scrollTop(0);
+                }
             })
         },
         submenus: function () {
-            var $submenu = $('.submenu');
-            $('.js-with-submenu a').on('click', function (e) {
-                if ($(this).siblings('.submenu').is('.active')) {
-                    $(this).siblings('.submenu').toggleClass('active');
+            $('.js-with-submenu .nav__item__link').on('click', function (e) {
+                e.preventDefault();
+                var $clickedItem = $(this).parent();
+                if ($clickedItem.is('.active')) {
+                    $clickedItem.toggleClass('active');
                 } else {
-                    $submenu.removeClass('active');
-                    $(this).siblings('.submenu').addClass('active');
+                    $('.js-with-submenu').removeClass('active');
+                    $clickedItem.addClass('active');
                 }
             })
         }

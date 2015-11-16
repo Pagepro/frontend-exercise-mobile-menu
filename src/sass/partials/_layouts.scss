@@ -3,17 +3,49 @@
    ========================================================================== */
 body {
     position: relative;
-    padding-bottom: 70px;
+
     padding-top: 80px;
+    padding-bottom: 70px;
     &.homepage {
         padding: 0 20px;
     }
-    &.blocked {
+    &.menu-opened {
         overflow-y: hidden;
+        .wrapper {
+            overflow-y: hidden;
+        }
+        .menu-toggler {
+            span {
+                transition: background-color 0ms 200ms;
+
+                background-color: transparent;
+                &:before,
+                &:after {
+                    transition: top 200ms,
+                    transform 250ms 200ms;
+                }
+                &:before {
+                    top: 0;
+
+                    transform: rotate(45deg);
+                }
+                &:after {
+                    top: 0;
+
+                    transform: rotate(-45deg);
+                }
+            }
+        }
         .sec--head {
-            height: 100%;
+            bottom: 0;
+
+            background: rgba($color_black, .8);
+        }
+        .sec--nav {
+            display: block;
             overflow-y: auto;
-            background: rgba($color_black, 0.8);
+
+            height: 100%;
         }
     }
 }
@@ -27,38 +59,43 @@ body {
 
 .sec--backgound {
     position: fixed;
+    z-index: 0;
     top: 0;
     left: 0;
-    z-index: 0;
+
     width: 100%;
     height: 100%;
+
     background: $color_grey;
     .backgound__image {
         position: absolute;
         top: 0;
-        left: 0;
         right: 0;
         bottom: 0;
+        left: 0;
+
         margin: auto;
     }
 }
 
 .sec--head {
-    // height: 80px;
-    background: $color_white;
-    z-index: 4;
     position: fixed;
-    left: 0;
-    right: 0;
+    z-index: 4;
     top: 0;
+    right: 0;
+    left: 0;
+
+    background: $color_white;
 }
 
 .sec--foot {
     position: absolute;
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+
     padding: 20px;
+
     color: $color_white;
     background: $color_default;
 }
