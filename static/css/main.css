@@ -497,6 +497,8 @@ body {
   padding-bottom: 70px; }
   body.homepage {
     padding: 0 20px; }
+  body.menu-opened {
+    overflow: hidden; }
 
 .sec--head,
 .sec--main,
@@ -522,7 +524,8 @@ body {
 
 .sec--head {
   height: 80px;
-  background: #ffffff; }
+  background: #ffffff;
+  z-index: 2; }
 
 .sec--foot {
   position: absolute;
@@ -533,6 +536,10 @@ body {
   color: #ffffff;
   background: #404040; }
 
+.sec--main p {
+  position: relative;
+  z-index: 0; }
+
 /* Layout Components
    ========================================================================== */
 /* ==========================================================================
@@ -540,8 +547,8 @@ body {
    ========================================================================== */
 .main-header {
   margin: 0;
-  line-height: 80px;
   font-size: 25px;
+  line-height: 80px;
   text-align: center; }
 
 .menu-toggler {
@@ -553,6 +560,81 @@ body {
   text-indent: -1000em;
   border-radius: 50%;
   background: #99282e; }
+
+.sec--nav {
+  display: none;
+  overflow-y: auto;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8); }
+  .sec--nav.opened {
+    display: block; }
+
+.nav--main {
+  position: relative;
+  z-index: 2;
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 80px; }
+  .nav--main__item {
+    position: relative;
+    list-style-type: none; }
+    .nav--main__item.active {
+      background: #eeeeee; }
+      .nav--main__item.active .nav__item__link {
+        display: block;
+        background-color: grey; }
+      .nav--main__item.active .submenu {
+        display: block; }
+
+.nav__item__link {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 50px;
+  padding: 0 20px;
+  line-height: 50px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 700;
+  background-color: #99282e; }
+
+.submenu {
+  display: none;
+  margin: 0;
+  padding: 0; }
+  .submenu__item {
+    list-style-tnavype: none;
+    height: 50px;
+    line-height: 50px; }
+    .submenu__item a {
+      display: block;
+      padding: 0 40px;
+      width: 100%;
+      height: 100%;
+      color: #404040;
+      background-color: #eeeeee; }
+  .submenu.opened {
+    display: block; }
+
+.submenu-point {
+  position: relative;
+  width: 100%;
+  height: 100%; }
+  .submenu-point:after {
+    display: block;
+    content: '';
+    clear: both;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 7px;
+    height: 7px;
+    border-top: 1px solid white;
+    border-right: 1px solid white;
+    -webkit-transform: rotate(135deg);
+    -ms-transform: rotate(135deg);
+    transform: rotate(135deg); }
 
 /* Vendor CSS
    ========================================================================== */
