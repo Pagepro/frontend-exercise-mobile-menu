@@ -1,6 +1,6 @@
 (function ($, window, document) {
     "use strict";
-    window.CHANGE_ME = window.CHANGE_ME || {
+    window.CHANGE_ME = window.CHANGE_ME || { // AD: `CHANGE_ME` should be changed into project name
         $body: null,
         init: function () {
             this.$body = $('body');
@@ -18,6 +18,7 @@
                     $('.js-with-submenu').removeClass('active');
                     $('.sec--nav').scrollTop(0);
                 }
+                // AD: kind of intereting function, but good idea :)
             })
         },
         submenus: function () {
@@ -34,6 +35,6 @@
         }
     };
     $(document).on('ready', function () {
-        window.CHANGE_ME.init();
+        window.CHANGE_ME.init(); // AD: `CHANGE_ME` should be changed into project name
     });
 }(jQuery, window, document));

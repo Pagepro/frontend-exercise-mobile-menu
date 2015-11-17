@@ -10,7 +10,7 @@
 
     text-align: center;
 
-    background-color: #fff;
+    background-color: #fff; // AD: please use sass variables
 }
 
 .menu-toggler {
@@ -25,7 +25,7 @@
 
     border: 3px solid $color_red;
     border-radius: 50%;
-    span {
+    span { // AD: you shouldn't use styles by tag name even if in this module this `span` will be used only for one task.
         position: absolute;
         top: 0;
         right: 0;
@@ -49,7 +49,7 @@
             height: 4px;
 
             content: '';
-            transition: top 200ms 250ms,
+            transition: top 200ms 250ms, // AD: I would rather prefer indent match to same width. `top` and `transform` should be in same column. This is more readable than existing way
             transform 250ms;
 
             border-radius: 3px;
@@ -113,7 +113,7 @@
             right: 0;
             left: 0;
 
-            width: 90%;
+            width: 90%; // AD: I think better way is to use always same spacing on sides by `left:20px;right:20px`, but this way is good too :)
             height: 1px;
             margin: auto;
 
