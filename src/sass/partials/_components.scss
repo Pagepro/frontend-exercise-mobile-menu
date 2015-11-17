@@ -28,9 +28,9 @@
     display: none;
     overflow-y: auto;
 
-    height: 100vh;
+    height: 100vh; // AD: only for newer mobile browsers so use it wisely. Check http://caniuse.com/
 
-    background: rgba(0,0,0,.8);
+    background: rgba(0,0,0,.8); // AD: stick to good formating. Put spaces afer comma and 0 if number is between 0 and 1, eg: (0, 0, 0, 0.8)
     &.opened {
         display: block;
     }
@@ -48,16 +48,16 @@
         &__item {
             position: relative;
 
-            list-style-type: none;
+            list-style-type: none; // AD: use list-style instead. Also use this option in `ul` not in `li`
             &.active {
                 background: $color_grey;
-            
+
                 .nav__item__link {
                     display: block;
-                    background-color: grey;
-                    
+                    background-color: grey; // AD: do not use default colors. Use sass variables
+
                  }
-                 .submenu{
+                 .submenu{ // AD: space before `{`
                     display: block;
                  }
             }
@@ -80,27 +80,27 @@
             font-weight: 700;
             background-color: $color_red;
         }
-        
+
     }
 }
 .submenu {
-    display: none; 
+    display: none;
 
     margin: 0;
     padding: 0;
 
     &__item {
-        list-style-tnavype: none;
-        height:50px;
+        list-style-tnavype: none; // AD: wording mistake
+        height:50px; // AD: add space after `:`
         line-height:50px;
-        a {
+        a { // AD: try not to style by tag name. Use classes insted. `.link` in this case should be good
             display:block;
             padding: 0 40px;
             width: 100%;
             height: 100%;
             color: $color_default;
             background-color: $color_grey;
-            
+
         }
     }
     &.opened {
@@ -110,7 +110,7 @@
 .submenu-point{
     position:relative;
     width:100%;
-    height: 100%;
+    height: 100%; // AD: you don't need to put sizes here. It is not necessary. You can leave width for safety, but you can delete height
     &:after{
         display: block;
         content:'';

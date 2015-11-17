@@ -13,6 +13,19 @@
         <![endif]-->
     </head>
     <body class="taskpage">
+        <!-- CODE REVIEW SUMMARY: -->
+        <!--
+            Mainly some wording mistakes and liting mistakes.
+            Try to write clean code, thank to that everyone who will look into code will know what is going on instead of wondering if "this indent is wrong or it belongs to another function".
+            You are using BEM well, but you still styling by tag name. Avoid this.
+            Don't forgot about link on page which doing some action instead of redirecting. You have to prevent default behavior which would be very annoying for user.
+            If you are creating some module, don't forgot to depend it from parent. Avoid global styling elements like: `.link`, `.item`, `.label` etc. because those elemets are related to parent.
+            Use global styles for elements, which can appear in several places, like: `.button`
+            Regarding menu - why are you using even three classes in menu items? This is not necessary and making code harder to read.
+                You can use only *one* class to item. In your JS file you can find those elements which contain submenus.
+                Then add some class like "has-submenu" for this item. Thanks to this dynamicly generated class you can manipulate with element indicators (white arrow in this case),
+                and also you can manipulate with toggling sub menu by JS. Your code will be cleaner.
+        -->
         <section class="sec--head">
             <a href="#" class="menu-toggler js-menu-toggler">toggle</a>
             <h1 class="main-header">!Mobile Header!</h1>
